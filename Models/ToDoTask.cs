@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace todo.Models;
-public class TodoTask
+namespace ToDo.Models;
+public class ToDoTask
 {
     [Key]
     public int Id { get; set; }
@@ -13,6 +13,8 @@ public class TodoTask
 
     [MaxLength(120, ErrorMessage = "This field must contain up to 120 characters")]
     public string Description { get; set; }
+
+    public List<Category> Categories { get; set; }
 
     [Required(ErrorMessage = "This field is required")]
     public bool IsComplete { get; set; }

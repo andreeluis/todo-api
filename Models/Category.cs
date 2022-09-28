@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace todo.Models;
+namespace ToDo.Models;
 public class Category
 {
     [Key]
