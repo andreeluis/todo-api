@@ -10,4 +10,5 @@ public class DataContext : DbContext
     }
 
     public DbSet<ToDoTask> ToDoTasks { get; set; }
+    public DbSet<Category> Categories { get; set; }
 }

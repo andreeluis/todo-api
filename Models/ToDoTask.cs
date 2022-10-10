@@ -14,8 +14,11 @@ public class ToDoTask
     [MaxLength(120, ErrorMessage = "This field must contain up to 120 characters")]
     public string Description { get; set; }
 
-    public List<Category> Categories { get; set; }
-
     [Required(ErrorMessage = "This field is required")]
     public bool IsComplete { get; set; }
+
+    [Required(ErrorMessage = "This field is required")]
+    [Range(1, int.MaxValue, ErrorMessage = "Invalid category")]
+    public int CategoryId { get; set; }
+    public Category Category { get; set; }
 }

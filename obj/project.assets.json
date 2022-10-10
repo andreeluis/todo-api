@@ -823,24 +823,26 @@
     ]
   },
   "packageFolders": {
-    "/home/andre/.nuget/packages/": {}
+    "C:\\Users\\andre\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/andre/dev/todo-api/todo-api.csproj",
+      "projectUniqueName": "C:\\dev\\todo-api\\todo-api.csproj",
       "projectName": "todo-api",
-      "projectPath": "/home/andre/dev/todo-api/todo-api.csproj",
-      "packagesPath": "/home/andre/.nuget/packages/",
-      "outputPath": "/home/andre/dev/todo-api/obj/",
+      "projectPath": "C:\\dev\\todo-api\\todo-api.csproj",
+      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+      "outputPath": "C:\\dev\\todo-api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/andre/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -887,7 +889,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/andre/.asdf/installs/dotnet/6.0.401/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
