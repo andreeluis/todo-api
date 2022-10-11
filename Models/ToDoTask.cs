@@ -20,5 +20,6 @@ public class ToDoTask
     [Required(ErrorMessage = "This field is required")]
     [Range(1, int.MaxValue, ErrorMessage = "Invalid category")]
     public int CategoryId { get; set; }
-    public Category Category { get; set; }
+
+    public Category? Category { get; set; }
 }

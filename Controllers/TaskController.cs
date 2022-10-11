@@ -16,7 +16,11 @@ public class TaskController : ControllerBase
     {
         try
         {
-            return Ok(await context.ToDoTasks.AsNoTracking().ToListAsync());
+            return Ok(await context
+                .ToDoTasks
+                .Include(x => x.Category)
+                .AsNoTracking()
+                .ToListAsync());
         }
         catch
         {
@@ -31,7 +35,11 @@ public class TaskController : ControllerBase
     {
         try
         {
-            return Ok(await context.ToDoTasks.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id));
+            return Ok(await context
+                .ToDoTasks
+                .Include(x => x.Category)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id));
         }
         catch
         {
@@ -72,7 +80,7 @@ public class TaskController : ControllerBase
 
         try
         {
-            context.Entry<ToDoTask>(task).State = EntityState.Modified;
+            context.Entry(task).State = EntityState.Modified;
             await context.SaveChangesAsync();
             return task;
         }

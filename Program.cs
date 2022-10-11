@@ -4,12 +4,12 @@ using ToDo.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
-builder.Services.AddScoped<DataContext, DataContext>();
-
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<DataContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("todoAPI")));
+
+builder.Services.AddScoped<DataContext, DataContext>();
 
 var app = builder.Build();
 

@@ -39,6 +39,25 @@ public class CategoryController : ControllerBase
         }
     }
 
+    [HttpGet]
+    [Route("{id:int}/tasks")]
+    public async Task<ActionResult<List<ToDoTask>>> GetTasksFromCategory([FromServices] DataContext context, int id)
+    {
+        try
+        {
+            return Ok(await context
+                .ToDoTasks
+                .AsNoTracking()
+                .Where(x => x.CategoryId == id)
+                .ToListAsync());
+        }
+        catch
+        {
+            return BadRequest(new { message = "No tasks found" });
+        }
+    }
+
+
     [Route("")]
     [HttpPost]
     public async Task<ActionResult<Category>> Post(
@@ -72,7 +91,7 @@ public class CategoryController : ControllerBase
 
         try
         {
-            context.Entry<Category>(category).State = EntityState.Modified;
+            context.Entry(category).State = EntityState.Modified;
             await context.SaveChangesAsync();
             return category;
         }
